@@ -1,0 +1,17 @@
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Data.deps.json
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Data.dll
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Data.pdb
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Common.dll
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Common.pdb
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.csproj.AssemblyReference.cache
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.AssemblyInfoInputs.cache
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.AssemblyInfo.cs
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.csproj.CoreCompileInputs.cache
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\Handloom.8DDB7D70.Up2Date
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.dll
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\refint\HandloomElegance.Data.dll
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.pdb
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\ref\HandloomElegance.Data.dll
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Data.runtimeconfig.json
+D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\bin\Debug\net8.0\HandloomElegance.Common.deps.json
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\bin\Debug\net8.0\HandloomElegance.Common.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\bin\Debug\net8.0\HandloomElegance.Common.pdb
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.AssemblyInfoInputs.cache
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.AssemblyInfo.cs
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.csproj.CoreCompileInputs.cache
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\refint\HandloomElegance.Common.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.pdb
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\ref\HandloomElegance.Common.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.csproj.AssemblyReference.cache

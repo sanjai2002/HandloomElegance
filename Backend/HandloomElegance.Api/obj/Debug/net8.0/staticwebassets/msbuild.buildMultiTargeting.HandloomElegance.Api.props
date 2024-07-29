@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HandloomElegance.Api.props" />
+</Project>
