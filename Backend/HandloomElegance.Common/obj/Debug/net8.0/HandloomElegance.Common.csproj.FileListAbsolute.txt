@@ -10,3 +10,4 @@ D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\re
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.pdb
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\ref\HandloomElegance.Common.dll
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.csproj.AssemblyReference.cache
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common\obj\Debug\net8.0\HandloomElegance.Common.sourcelink.json

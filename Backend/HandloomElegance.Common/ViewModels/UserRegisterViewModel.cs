@@ -2,7 +2,7 @@ namespace HandloomElegance.Common.ViewModels
 {
     public class UserRegisterViewModel
     {
-        public string? Username { get; set; }
+        // public string? Username { get; set; }
 
         public string? Email { get; set; }
 

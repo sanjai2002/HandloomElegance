@@ -14,9 +14,14 @@ namespace HandloomElegance.Data.Repository{
            await _HandloomEleganceDbContext.SaveChangesAsync();
         }
 
-        public  bool FindEmailid(string Emailid){
+        public bool FindEmailid(string Emailid){
             return  _HandloomEleganceDbContext.Users.Any(e=>e.Email==Emailid);
             
+        }
+
+        public User GetUserDetails(string Email){
+            return  _HandloomEleganceDbContext.Users!.Where(e=>e.Email==Email).FirstOrDefault()!;
+
         }
   
 

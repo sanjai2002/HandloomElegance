@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using HandloomElegance.Core.IServices;
 using HandloomElegance.Common.ViewModels;
+using HandloomElegance.Common.Utils;
+
 namespace HandloomElegance.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -13,6 +15,7 @@ namespace HandloomElegance.Api.Controllers
             _IUserServices = IUserServices;
 
         }
+
         [HttpPost]
         public async Task<IActionResult> UserRegistration(UserRegisterViewModel Register)
         {
@@ -29,6 +32,14 @@ namespace HandloomElegance.Api.Controllers
             {
                 return Ok("Not Registered");
             }
+
+        }
+
+        [HttpPost]
+        public async Task<ActionResult>LoginLearner(UserLoginViewModel UserLoginViewModel)
+        {
+            ReturnMsg  data=await _IUserServices.Userlogin(UserLoginViewModel);
+            return Ok(data);
 
         }
 

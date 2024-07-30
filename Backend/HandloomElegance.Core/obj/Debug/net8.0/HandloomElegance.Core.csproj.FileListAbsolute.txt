@@ -17,3 +17,4 @@ D:\Learning\HandloomElegance\Backend\HandloomElegance.Core\obj\Debug\net8.0\refi
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Core\obj\Debug\net8.0\HandloomElegance.Core.pdb
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Core\obj\Debug\net8.0\HandloomElegance.Core.genruntimeconfig.cache
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Core\obj\Debug\net8.0\ref\HandloomElegance.Core.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Core\obj\Debug\net8.0\HandloomElegance.Core.sourcelink.json

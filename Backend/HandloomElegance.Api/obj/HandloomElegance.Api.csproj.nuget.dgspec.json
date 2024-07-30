@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.Api\\HandloomElegance.Api.csproj": {}
+    "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\HandloomElegance.Api.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.Api\\HandloomElegance.Api.csproj": {
+    "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\HandloomElegance.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.Api\\HandloomElegance.Api.csproj",
+        "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\HandloomElegance.Api.csproj",
         "projectName": "HandloomElegance.Api",
-        "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.Api\\HandloomElegance.Api.csproj",
+        "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\HandloomElegance.Api.csproj",
         "packagesPath": "C:\\Users\\sanjai.harikrishnan\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.Api\\obj\\",
+        "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sanjai.harikrishnan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,6 +47,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

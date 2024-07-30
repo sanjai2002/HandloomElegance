@@ -15,3 +15,4 @@ D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\Hand
 D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\ref\HandloomElegance.Data.dll
 D:\Learning\HandloomElegance\Backend\handloomelegance.data\bin\Debug\net8.0\HandloomElegance.Data.runtimeconfig.json
 D:\Learning\HandloomElegance\Backend\handloomelegance.data\obj\Debug\net8.0\HandloomElegance.Data.genruntimeconfig.cache
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Data\obj\Debug\net8.0\HandloomElegance.Data.sourcelink.json
