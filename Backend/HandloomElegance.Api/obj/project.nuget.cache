@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PPMy2W0DX90=",
+  "dgSpecHash": "HIw2zF3c21M=",
   "success": true,
-  "projectFilePath": "D:\\Learning\\HandloomElegance\\Backend\\Handloomelegance.api\\HandloomElegance.Api.csproj",
+  "projectFilePath": "D:\\Learning\\HandloomElegance\\Backend\\handloomelegance.api\\HandloomElegance.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sanjai.harikrishnan\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\sanjai.harikrishnan\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",

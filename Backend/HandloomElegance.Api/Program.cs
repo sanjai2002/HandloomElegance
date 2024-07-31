@@ -10,9 +10,12 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<HandloomEleganceDbContext>();
 builder.Services.AddScoped<IUserServices,userServices>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
-builder.Services.AddScoped<HandloomEleganceDbContext>();
+builder.Services.AddScoped<ICategoryServices,CategoryServices>();
+builder.Services.AddScoped<ICategoryrepoitory,CategoryRepository>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
