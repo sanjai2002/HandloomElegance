@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using HandloomElegance.Core.IServices;
 using HandloomElegance.Common.ViewModels;
 using HandloomElegance.Common.Utils;
+using System.Collections;
 
 namespace HandloomElegance.Api.Controllers
 {
@@ -23,6 +24,13 @@ namespace HandloomElegance.Api.Controllers
             else{
                 return Ok("Category Not Added");
             }
+
+        }
+        [HttpGet]
+        public IActionResult GetAllCategory(){
+            var category=_ICategoryServices.GetAllcategory();
+            return Ok(category);
+
 
         }
         
