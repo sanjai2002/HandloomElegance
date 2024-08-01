@@ -48,6 +48,15 @@ namespace HandloomElegance.Api.Controllers
             return Ok("Not Updated");
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCategory(Guid CategoryId){
+            bool Categories=await _ICategoryServices.DeleteCategory(CategoryId);
+            if(Categories==true){
+                return Ok("Deleted Successfully");
+            }
+            return Ok("Not Deleted");
+        }
+
 
 
 
