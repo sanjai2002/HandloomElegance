@@ -11,7 +11,6 @@ namespace HandloomElegance.Api.Controllers
     public class Categorycontroller : ControllerBase
     {
         private readonly ICategoryServices _ICategoryServices;
-
         public Categorycontroller(ICategoryServices ICategoryServices)
         {
             _ICategoryServices = ICategoryServices;
@@ -27,7 +26,7 @@ namespace HandloomElegance.Api.Controllers
             }
             else
             {
-                return Ok("Category Not Added");
+                return Ok("Category Already Exits");
             }
 
         }
@@ -36,7 +35,6 @@ namespace HandloomElegance.Api.Controllers
         {
             var category = _ICategoryServices.GetAllcategory();
             return Ok(category);
-
         }
 
         [HttpPut]
