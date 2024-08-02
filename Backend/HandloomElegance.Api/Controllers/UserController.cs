@@ -36,7 +36,7 @@ namespace HandloomElegance.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult>LoginLearner(UserLoginViewModel UserLoginViewModel)
+        public async Task<ActionResult>LoginUser(UserLoginViewModel UserLoginViewModel)
         {
             ReturnMsg  data=await _IUserServices.Userlogin(UserLoginViewModel);
             return Ok(data);

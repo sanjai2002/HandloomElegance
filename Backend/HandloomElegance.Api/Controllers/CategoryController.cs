@@ -36,7 +36,6 @@ namespace HandloomElegance.Api.Controllers
             var category = _ICategoryServices.GetAllcategory();
             return Ok(category);
         }
-
         [HttpPut]
         public async Task<IActionResult> UpdateCategory(CategoryListViewModel Category){
             bool Categories=await _ICategoryServices.UpdateCategory(Category);
