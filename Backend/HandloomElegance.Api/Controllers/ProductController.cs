@@ -12,6 +12,7 @@ namespace HandloomElegance.Api.Controllers
         public ProductController(IProductServices IProductServices){
            _IProductServices= IProductServices;
         }
+
     [HttpPost]
        public async Task<IActionResult> AddProducts(AddProductViewModel Products)
         {
@@ -25,6 +26,11 @@ namespace HandloomElegance.Api.Controllers
                 return Ok("Product Already Exits");
             }
         }
+        [HttpGet]
+        public IEnumerable<ProductListViewModel>GetAllProducts(){
+            return _IProductServices.GetAllProducts();
+        }
+
 
     [HttpPut]
     public async Task<IActionResult>UpdateProducts(UpdateProductViewModel UpdateProducts){
