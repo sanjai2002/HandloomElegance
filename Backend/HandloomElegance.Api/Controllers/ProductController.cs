@@ -14,7 +14,9 @@ namespace HandloomElegance.Api.Controllers
            _IProductServices= IProductServices;
 
         }
-        [HttpPost]
+
+    
+    [HttpPost]
        public async Task<IActionResult> AddProducts(AddProductViewModel Products)
         {
             bool AddProducts = await _IProductServices.AddProducts(Products);
@@ -28,6 +30,19 @@ namespace HandloomElegance.Api.Controllers
             }
 
         }
+    [HttpPut]
+    public async Task<IActionResult>UpdateProducts(UpdateProductViewModel UpdateProducts){
+        bool Updateproducts=await _IProductServices.UpdateProduct(UpdateProducts);
+        if(Updateproducts){
+            return Ok("Updated Succesfuly");
+
+        }
+        return Ok("Not Updated");
+
+    }
+
+
+
 
     }
 
