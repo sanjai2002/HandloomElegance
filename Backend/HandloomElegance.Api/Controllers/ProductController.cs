@@ -9,13 +9,9 @@ namespace HandloomElegance.Api.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductServices _IProductServices;
-
         public ProductController(IProductServices IProductServices){
            _IProductServices= IProductServices;
-
         }
-
-    
     [HttpPost]
        public async Task<IActionResult> AddProducts(AddProductViewModel Products)
         {
@@ -28,8 +24,8 @@ namespace HandloomElegance.Api.Controllers
             {
                 return Ok("Product Already Exits");
             }
-
         }
+
     [HttpPut]
     public async Task<IActionResult>UpdateProducts(UpdateProductViewModel UpdateProducts){
         bool Updateproducts=await _IProductServices.UpdateProduct(UpdateProducts);
@@ -38,7 +34,15 @@ namespace HandloomElegance.Api.Controllers
 
         }
         return Ok("Not Updated");
+    }
 
+    [HttpDelete]
+    public async Task<IActionResult> DeleteProduct(Guid ProductId){
+        bool DeleteProduct=await _IProductServices.Deleteproduct(ProductId);
+        if(DeleteProduct){
+            return Ok("Product Deleted");
+        }
+        return Ok("Product Not  Deleted");
     }
 
 
