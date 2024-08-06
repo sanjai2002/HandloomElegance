@@ -9,12 +9,13 @@ namespace HandloomElegance.Api.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductServices _IProductServices;
-        public ProductController(IProductServices IProductServices){
-           _IProductServices= IProductServices;
+        public ProductController(IProductServices IProductServices)
+        {
+            _IProductServices = IProductServices;
         }
 
-    [HttpPost]
-       public async Task<IActionResult> AddProducts(AddProductViewModel Products)
+        [HttpPost]
+        public async Task<IActionResult> AddProducts(AddProductViewModel Products)
         {
             bool AddProducts = await _IProductServices.AddProducts(Products);
             if (AddProducts)
@@ -27,31 +28,39 @@ namespace HandloomElegance.Api.Controllers
             }
         }
         [HttpGet]
-        public IEnumerable<ProductListViewModel>GetAllProducts(){
+        public IEnumerable<ProductListViewModel> GetAllProducts()
+        {
             return _IProductServices.GetAllProducts();
         }
 
-
-    [HttpPut]
-    public async Task<IActionResult>UpdateProducts(UpdateProductViewModel UpdateProducts){
-        bool Updateproducts=await _IProductServices.UpdateProduct(UpdateProducts);
-        if(Updateproducts){
-            return Ok("Updated Succesfuly");
-
+        [HttpGet("Products/{ProductId}")]
+        public async Task<IActionResult>Getproductsdetails(string ProductId){
+            ProductListDetailsViewModel Products=await _IProductServices.GetProductDetailsByProductId(ProductId);
+            return Ok(Products);
         }
-        return Ok("Not Updated");
-    }
 
-    [HttpDelete]
-    public async Task<IActionResult> DeleteProduct(Guid ProductId){
-        bool DeleteProduct=await _IProductServices.Deleteproduct(ProductId);
-        if(DeleteProduct){
-            return Ok("Product Deleted");
+        [HttpPut]
+        public async Task<IActionResult> UpdateProducts(UpdateProductViewModel UpdateProducts)
+        {
+            bool Updateproducts = await _IProductServices.UpdateProduct(UpdateProducts);
+            if (Updateproducts)
+            {
+                return Ok("Updated Succesfuly");
+
+            }
+            return Ok("Not Updated");
         }
-        return Ok("Product Not  Deleted");
-    }
 
-
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProduct(Guid ProductId)
+        {
+            bool DeleteProduct = await _IProductServices.Deleteproduct(ProductId);
+            if (DeleteProduct)
+            {
+                return Ok("Product Deleted");
+            }
+            return Ok("Product Not  Deleted");
+        }
 
 
     }
