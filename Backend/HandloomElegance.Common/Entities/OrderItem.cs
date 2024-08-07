@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace HandloomElegance.Common.Entities;
-
 public partial class OrderItem
 {
     public Guid OrderItemId { get; set; }

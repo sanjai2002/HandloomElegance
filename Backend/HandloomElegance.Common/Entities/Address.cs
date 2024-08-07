@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace HandloomElegance.Common.Entities;
 
+
 public partial class Address
 {
     public Guid AddressId { get; set; }

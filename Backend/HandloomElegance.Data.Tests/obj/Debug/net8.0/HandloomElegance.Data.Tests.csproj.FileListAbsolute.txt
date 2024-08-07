@@ -153,3 +153,4 @@ D:\Learning\HandloomElegance\Backend\HandloomElegance.Data.Tests\obj\Debug\net8.
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Data.Tests\obj\Debug\net8.0\HandloomElegance.Data.Tests.pdb
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Data.Tests\obj\Debug\net8.0\HandloomElegance.Data.Tests.genruntimeconfig.cache
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Data.Tests\obj\Debug\net8.0\ref\HandloomElegance.Data.Tests.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Data.Tests\obj\Debug\net8.0\HandloomElegance.Data.Tests.sourcelink.json

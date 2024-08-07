@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace HandloomElegance.Common.Entities;
+
+
 public partial class ShoppingCart
 {
     public Guid CartId { get; set; }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+
 namespace HandloomElegance.Common.Entities;
+
 
 public partial class Product
 {
@@ -16,7 +18,7 @@ public partial class Product
 
     public Guid? CategoryId { get; set; }
 
-    public string? ImageUrl { get; set; }
+    public byte[]? ImageUrl { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 

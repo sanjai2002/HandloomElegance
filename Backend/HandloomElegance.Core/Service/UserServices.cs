@@ -59,7 +59,7 @@ namespace HandloomElegance.Core.Services
                         Email = true,
                         Password = true,
                         Role = existingUser.Role,
-                        Token="dddd"
+                        // Token="dddd"
                     };
                     return successMsg;
                 }

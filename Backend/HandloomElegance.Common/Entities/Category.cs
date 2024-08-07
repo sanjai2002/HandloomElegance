@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace HandloomElegance.Common.Entities;
 
+
 public partial class Category
 {
     public Guid CategoryId { get; set; }

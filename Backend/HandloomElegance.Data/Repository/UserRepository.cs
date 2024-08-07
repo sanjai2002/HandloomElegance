@@ -21,7 +21,6 @@ namespace HandloomElegance.Data.Repository{
 
         public User GetUserDetails(string Email){
             return  _HandloomEleganceDbContext.Users!.Where(e=>e.Email==Email).FirstOrDefault()!;
-
         }
   
 

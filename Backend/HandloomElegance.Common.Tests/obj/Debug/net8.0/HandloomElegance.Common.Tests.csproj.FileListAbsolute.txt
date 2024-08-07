@@ -109,3 +109,4 @@ D:\Learning\HandloomElegance\Backend\HandloomElegance.Common.Tests\obj\Debug\net
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common.Tests\obj\Debug\net8.0\HandloomElegance.Common.Tests.pdb
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common.Tests\obj\Debug\net8.0\HandloomElegance.Common.Tests.genruntimeconfig.cache
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Common.Tests\obj\Debug\net8.0\ref\HandloomElegance.Common.Tests.dll
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Common.Tests\obj\Debug\net8.0\HandloomElegance.Common.Tests.sourcelink.json

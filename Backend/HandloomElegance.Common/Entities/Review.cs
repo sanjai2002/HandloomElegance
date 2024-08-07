@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 namespace HandloomElegance.Common.Entities;
+
+
 public partial class Review
 {
     public Guid ReviewId { get; set; }
