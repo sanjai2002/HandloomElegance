@@ -15,14 +15,20 @@ namespace HandloomElegance.Api.Controllers{
 
         [HttpPost]
         public async Task<IActionResult>AddtoCart(ShooppingCartViewModel cart){
-            var Shoopingcart=await _ICartServices.AddCart(cart);
+            bool Shoopingcart=await _ICartServices.AddCart(cart);
             if(Shoopingcart){
                 return Ok("Cart Added");
             }
-                return Ok("Cart Not Added");
-
-
+            return Ok("Cart Not Added");
         }
+
+        [HttpDelete]
+        public async Task<IActionResult>RemoveCart(Guid cartId){
+            bool cart=await _ICartServices.RemoveCart(cartId);
+            if(cart)return Ok("Cart Removed");
+            return Ok("Cart Not Removed");
+        }
+        
 
     }
 }

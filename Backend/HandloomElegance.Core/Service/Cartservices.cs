@@ -26,6 +26,16 @@ namespace HandloomElegance.Core.Services
 
         }
 
+        
+        public async Task<bool>RemoveCart(Guid CartId){
+            var cart=_ICartRepository.FindCartId(CartId);
+            if(cart!=null){
+                await _ICartRepository.RemoveCart(cart);
+                return true;
+            }
+            return false;
+        }
+
 
     
 
