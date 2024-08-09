@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.api\\HandloomElegance.Api.csproj": {}
+    "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\HandloomElegance.Api.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.api\\HandloomElegance.Api.csproj": {
+    "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\HandloomElegance.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.api\\HandloomElegance.Api.csproj",
+        "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\HandloomElegance.Api.csproj",
         "projectName": "HandloomElegance.Api",
-        "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.api\\HandloomElegance.Api.csproj",
+        "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\HandloomElegance.Api.csproj",
         "packagesPath": "C:\\Users\\sanjai.harikrishnan\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.api\\obj\\",
+        "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sanjai.harikrishnan\\AppData\\Roaming\\NuGet\\NuGet.Config"
