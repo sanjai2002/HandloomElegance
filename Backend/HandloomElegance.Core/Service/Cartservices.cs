@@ -12,7 +12,21 @@ namespace HandloomElegance.Core.Services
             _ICartRepository=ICartRepository;
 
         }
-        
+
+        public async Task<bool>AddCart(ShooppingCartViewModel Cart){
+            ShoppingCart ShoppingCart=new ShoppingCart(){
+                CartId=Guid.NewGuid(),
+                UserId=Cart.UserId,
+                ProductId=Cart.ProductId,
+                Quantity=Cart.Quantity
+
+            };
+           await  _ICartRepository.AddCart(ShoppingCart);
+           return true;
+
+        }
+
+
     
 
 

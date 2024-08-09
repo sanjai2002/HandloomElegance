@@ -19,6 +19,8 @@ builder.Services.AddScoped<IProductServices,ProductServices>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
 builder.Services.AddScoped<IOrderServices,OrderServices>();
 builder.Services.AddScoped<IOrderRepository,OrderRepository>();
+builder.Services.AddScoped<ICartServices,CartServices>();
+builder.Services.AddScoped<ICartRepository,CartRepository>();
 
 
 // Add services to the container.

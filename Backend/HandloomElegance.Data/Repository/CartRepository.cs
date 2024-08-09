@@ -7,9 +7,15 @@ namespace HandloomElegance.Data.Repository{
          private readonly HandloomEleganceDbContext _HandloomEleganceDbContext;
         public CartRepository(HandloomEleganceDbContext HandloomEleganceDbContext){
             _HandloomEleganceDbContext=HandloomEleganceDbContext;
+        }
+
+        
+        public async Task AddCart(ShoppingCart ShooppingCart){
+            await _HandloomEleganceDbContext.AddAsync(ShooppingCart);
+            await _HandloomEleganceDbContext.SaveChangesAsync();
 
         }
-        
+
         
 
 

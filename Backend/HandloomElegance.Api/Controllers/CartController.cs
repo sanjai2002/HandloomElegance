@@ -12,15 +12,17 @@ namespace HandloomElegance.Api.Controllers{
         public CartController(ICartServices ICartServices){
            _ICartServices= ICartServices;
         }
-        
+
+        [HttpPost]
+        public async Task<IActionResult>AddtoCart(ShooppingCartViewModel cart){
+            var Shoopingcart=await _ICartServices.AddCart(cart);
+            if(Shoopingcart){
+                return Ok("Cart Added");
+            }
+                return Ok("Cart Not Added");
 
 
-
-
-
-
-
-
+        }
 
     }
 }
