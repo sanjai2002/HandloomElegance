@@ -43,8 +43,36 @@ namespace HandloomElegance.Core.Services
             return true;
         }
 
+        public async Task<bool>CartOrder(Guid userId){
+            var CartItems= _IOrderRepository.GetUserCart(userId);
+            Order ob=new Order(){
+                OrderId=Guid.NewGuid(),
+                UserId=CartItems.First().UserId,
+                OrderDate=DateTime.Now,
+                Status="Pending",
+                TotalAmount=1200,
+                AddressId=Guid.Parse("11ba9a62-7b7e-4214-975e-5b742eae6f81"),
+            };
+            await _IOrderRepository.Addorder(ob);
+            var OrderId=_IOrderRepository.Findorder(ob.OrderId);
+            foreach(var Cart in CartItems){
+            Guid productId = Guid.Parse(Cart!.ProductId!.ToString());
+            var product=_IOrderRepository.FindProduct(productId);
+            product.StockQuantity=product.StockQuantity-Cart.Quantity;
+            await _IOrderRepository.QuantityUpdate(product);
+                OrderItem orderItem=new OrderItem(){
+                    OrderItemId=Guid.NewGuid(),
+                    OrderId=OrderId.OrderId,
+                    ProductId=product.ProductId,
+                    Quantity=Cart.Quantity,
+                    Price=product.Price,
+                };
+                await _IOrderRepository.AddorderItems(orderItem);
 
-        
+         }
+         return true;
+
+        } 
 
     }
 }

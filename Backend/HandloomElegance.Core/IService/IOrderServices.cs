@@ -7,5 +7,7 @@ namespace HandloomElegance.Core.IServices{
 
         public Task<bool>Order(OrderViewModel order);
 
+        public Task<bool>CartOrder(Guid userId);
+
     }
 }
