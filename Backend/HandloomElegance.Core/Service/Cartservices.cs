@@ -61,11 +61,6 @@ namespace HandloomElegance.Core.Services
             }
             return false;
         }
-
-
-
-
-
     }
 
 }
