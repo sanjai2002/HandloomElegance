@@ -28,6 +28,14 @@ namespace HandloomElegance.Api.Controllers{
             if(cart)return Ok("Cart Removed");
             return Ok("Cart Not Removed");
         }
+
+        [HttpPut]
+        public async Task<IActionResult>UpdateCart(UpdateCartViewModel updateCart){
+            bool userCart=await _ICartServices.UpdateCart(updateCart);
+            if(userCart)return Ok("Cart Updated");
+            return Ok("Cart Not Updated");
+            
+        }
         
 
     }

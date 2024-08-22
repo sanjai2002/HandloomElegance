@@ -32,10 +32,17 @@ namespace HandloomElegance.Data.Repository
 
         }
 
+        public async Task UpdateCart(ShoppingCart shoopingcart){
+            _HandloomEleganceDbContext.Update(shoopingcart);
+            await SaveChanges();
+        }
+
         public async Task SaveChanges()
         {
             await _HandloomEleganceDbContext.SaveChangesAsync();
         }
+
+
         
 
 

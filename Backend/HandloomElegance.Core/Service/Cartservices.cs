@@ -36,6 +36,16 @@ namespace HandloomElegance.Core.Services
             return false;
         }
 
+        public async Task<bool>UpdateCart(UpdateCartViewModel updateCart){
+            var UserCart=_ICartRepository.FindCartId(updateCart.CartId);
+            if(UserCart!=null){
+                UserCart.Quantity=updateCart.Quantity;
+                await _ICartRepository.UpdateCart(UserCart);
+                return true;
+            }
+            return false;
+        }
+
 
     
 
