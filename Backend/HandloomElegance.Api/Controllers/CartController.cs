@@ -19,7 +19,7 @@ namespace HandloomElegance.Api.Controllers{
             if(Shoopingcart){
                 return Ok("Cart Added");
             }
-            return Ok("Cart Not Added");
+            return Ok("No stock Product");
         }
 
         [HttpDelete]

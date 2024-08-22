@@ -42,6 +42,11 @@ namespace HandloomElegance.Data.Repository
             await _HandloomEleganceDbContext.SaveChangesAsync();
         }
 
+        public Product  Findproduct(Guid ProductId){
+
+            return _HandloomEleganceDbContext.Products.Find(ProductId);
+        }
+
 
         
 

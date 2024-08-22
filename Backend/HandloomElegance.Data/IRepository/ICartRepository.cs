@@ -10,6 +10,8 @@ namespace HandloomElegance.Data.IRepository{
 
         public Task UpdateCart(ShoppingCart shoopingcart);
 
+        public Product Findproduct(Guid ProductId);
+
 
 
     }
