@@ -43,16 +43,23 @@ namespace HandloomElegance.Core.Services
             return true;
         }
 
-        public async Task<bool>CartOrder(Guid userId){
+        public async Task<bool>CartOrder(Guid userId,Guid AddressId){
             var CartItems= _IOrderRepository.GetUserCart(userId);
+            decimal TotalAmount =0;
+            foreach(var cart in CartItems){
+                Guid productId = Guid.Parse(cart.ProductId.ToString());
+                var product = _IOrderRepository.FindProduct(productId);
+                TotalAmount+=product.Price*cart.Quantity;
+            }
             Order ob=new Order(){
                 OrderId=Guid.NewGuid(),
                 UserId=CartItems.First().UserId,
                 OrderDate=DateTime.Now,
                 Status="Pending",
-                TotalAmount=1200,
-                AddressId=Guid.Parse("11ba9a62-7b7e-4214-975e-5b742eae6f81"),
+                TotalAmount=TotalAmount,
+                AddressId=AddressId,
             };
+
             await _IOrderRepository.Addorder(ob);
             var OrderId=_IOrderRepository.Findorder(ob.OrderId);
             foreach(var Cart in CartItems){
@@ -68,7 +75,7 @@ namespace HandloomElegance.Core.Services
                     Price=product.Price,
                 };
                 await _IOrderRepository.AddorderItems(orderItem);
-
+                await _IOrderRepository.DeleteUserCart(Cart);
          }
          return true;
 

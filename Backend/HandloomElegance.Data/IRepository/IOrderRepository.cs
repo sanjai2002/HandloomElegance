@@ -11,10 +11,11 @@ namespace HandloomElegance.Data.IRepository{
         public Task QuantityUpdate(Product product);
         public Task AddorderItems(OrderItem orderItem);
 
-
         // public IEnumerable<UserCartListViewModel>GetUserCart(Guid userId);
         public  List<ShoppingCart>GetUserCart(Guid userId);
-         public List<Address>GetUserAddress(Guid userId);
+        public List<Address>GetUserAddress(Guid userId);
+
+        public Task DeleteUserCart(ShoppingCart shoppingCart);
 
     }
 

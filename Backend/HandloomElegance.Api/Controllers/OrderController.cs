@@ -23,9 +23,10 @@ namespace HandloomElegance.Api.Controllers
         }
         return Ok("Not Ordered");
        }
+       
        [HttpPost]
-       public async Task<IActionResult>Cartorder(Guid userid){
-        bool order=await _IOrderServices.CartOrder(userid);
+       public async Task<IActionResult>Cartorder(Guid userid,Guid AddressId){
+        bool order=await _IOrderServices.CartOrder(userid,AddressId);
         if(order){
             return Ok("Order Conformed");
         }

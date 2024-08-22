@@ -52,6 +52,11 @@ namespace HandloomElegance.Data.Repository
             return _HandloomEleganceDbContext.ShoppingCarts.Where(e => e.UserId == userId).ToList();
         }
 
+       public  async Task DeleteUserCart(ShoppingCart shoppingCart){
+             _HandloomEleganceDbContext.ShoppingCarts.Remove(shoppingCart);
+             await _HandloomEleganceDbContext.SaveChangesAsync();
+       }
+
 
     }
 }
