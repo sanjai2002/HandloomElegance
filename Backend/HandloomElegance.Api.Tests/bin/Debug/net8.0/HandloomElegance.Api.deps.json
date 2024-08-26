@@ -971,7 +971,10 @@
           "Microsoft.AspNetCore.Http": "2.2.2"
         },
         "runtime": {
-          "HandloomElegance.Common.dll": {}
+          "HandloomElegance.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HandloomElegance.Core/1.0.0": {
@@ -979,7 +982,10 @@
           "HandloomElegance.Data": "1.0.0"
         },
         "runtime": {
-          "HandloomElegance.Core.dll": {}
+          "HandloomElegance.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "HandloomElegance.Data/1.0.0": {
@@ -992,7 +998,10 @@
           "Pomelo.EntityFrameworkCore.MySql": "8.0.2"
         },
         "runtime": {
-          "HandloomElegance.Data.dll": {}
+          "HandloomElegance.Data.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

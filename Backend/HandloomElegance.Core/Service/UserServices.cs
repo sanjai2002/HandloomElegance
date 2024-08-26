@@ -25,7 +25,7 @@ namespace HandloomElegance.Core.Services
                     UserId = Guid.NewGuid(),
                     Email = Register!.Email!,
                     Username = Register!.Email!.Split("@")[0],
-                    PasswordHash = SHA256Encrypt.ComputePasswordToSha256Hash(Register!.Password!),
+                    Password = SHA256Encrypt.ComputePasswordToSha256Hash(Register!.Password!),
                     FirstName = Register.FirstName,
                     LastName = Register.LastName,
                     PhoneNumber = Register.PhoneNumber,
@@ -51,7 +51,7 @@ namespace HandloomElegance.Core.Services
             {
                 var existingUser = _IUserRepository.GetUserDetails(Login!.Email!);
                 // Check if the password matches
-                if (existingUser.PasswordHash == SHA256Encrypt.ComputePasswordToSha256Hash(Login!.Password!))
+                if (existingUser.Password == SHA256Encrypt.ComputePasswordToSha256Hash(Login!.Password!))
                 {
                     
                     ReturnMsg successMsg = new ReturnMsg()
@@ -59,7 +59,6 @@ namespace HandloomElegance.Core.Services
                         Email = true,
                         Password = true,
                         Role = existingUser.Role,
-                        // Token="dddd"
                     };
                     return successMsg;
                 }

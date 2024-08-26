@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace HandloomElegance.Common.Entities;
 
+namespace HandloomElegance.Common.Entities;
 
 public partial class ShoppingCart
 {
@@ -12,6 +12,12 @@ public partial class ShoppingCart
     public Guid? ProductId { get; set; }
 
     public int Quantity { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? CreatedAt { get; set; }
+
+    public DateTime? ModifiedAt { get; set; }
 
     public virtual Product? Product { get; set; }
 

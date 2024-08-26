@@ -10,11 +10,18 @@ namespace HandloomElegance.Data.Repository
         public AddressRepository(HandloomEleganceDbContext HandloomEleganceDbContext)
         {
             _HandloomEleganceDbContext = HandloomEleganceDbContext;
-            
+
+        }
+
+        public async Task AddAddress(Address address){
+            await _HandloomEleganceDbContext.Addresses.AddAsync(address);
+            await SaveChanges();
         }
 
 
-
+        public async Task SaveChanges(){
+            await _HandloomEleganceDbContext.SaveChangesAsync();
+        }
 
 
     }

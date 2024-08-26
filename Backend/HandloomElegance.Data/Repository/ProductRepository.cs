@@ -36,7 +36,7 @@ namespace HandloomElegance.Data.Repository
                 Price = e.Price,
                 StockQuantity = e.StockQuantity,
                 CategoryName = e.Category!.CategoryName,
-                Image = Encoding.ASCII.GetString(e.ImageUrl!),
+                // Image = Encoding.ASCII.GetString(e.ImageUrl!),
             }).ToList();
 
 

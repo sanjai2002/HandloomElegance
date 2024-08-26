@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace HandloomElegance.Common.Entities;
-
 
 public partial class Address
 {
@@ -19,6 +17,12 @@ public partial class Address
     public string PostalCode { get; set; } = null!;
 
     public string Country { get; set; } = null!;
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? CreatedAt { get; set; }
+
+    public DateTime? ModifiedAt { get; set; }
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 

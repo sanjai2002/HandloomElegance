@@ -30,7 +30,7 @@ namespace HandloomElegance.Core.Services
                     Price = AddProducts.Price,
                     StockQuantity = AddProducts.StockQuantity,
                     CategoryId = AddProducts.CategoryId,
-                    ImageUrl = byteArray, 
+                    // ImageUrl = byteArray, 
                 };
                 await _IProductRepository.AddProducts(ob);
                 return true;
@@ -51,7 +51,7 @@ namespace HandloomElegance.Core.Services
                     Price=product.Price,
                     StockQuantity=product.StockQuantity,
                     CategoryName=product.Category?.CategoryName,
-                    Image=Encoding.ASCII.GetString(product!.ImageUrl!)
+                    // Image=Encoding.ASCII.GetString(product!.ImageUrl!)
                 };
                 return ProductList;
       }
@@ -65,7 +65,7 @@ namespace HandloomElegance.Core.Services
                 product.Price=UpdateProducts!.Price;
                 product.StockQuantity=UpdateProducts!.StockQuantity;
                 product.CategoryId=UpdateProducts!.CategoryId;
-                product.ImageUrl=byteArray;
+                // product.ImageUrl=byteArray;
                 product.UpdatedAt=DateTime.Now;
                 await _IProductRepository.Updateproduct(product);
                 return true;

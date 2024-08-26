@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 
 namespace HandloomElegance.Common.Entities;
-
-
 public partial class Product
 {
     public Guid ProductId { get; set; }
@@ -18,11 +16,13 @@ public partial class Product
 
     public Guid? CategoryId { get; set; }
 
-    public byte[]? ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
     public DateTime? UpdatedAt { get; set; }
+
+    public bool? IsActive { get; set; }
 
     public virtual Category? Category { get; set; }
 

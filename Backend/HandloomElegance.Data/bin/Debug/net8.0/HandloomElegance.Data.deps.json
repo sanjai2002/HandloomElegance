@@ -965,7 +965,10 @@
           "Microsoft.AspNetCore.Http": "2.2.2"
         },
         "runtime": {
-          "HandloomElegance.Common.dll": {}
+          "HandloomElegance.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

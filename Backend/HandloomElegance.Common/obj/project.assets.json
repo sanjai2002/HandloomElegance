@@ -522,11 +522,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\handloomelegance.common\\HandloomElegance.Common.csproj",
+      "projectUniqueName": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Common\\HandloomElegance.Common.csproj",
       "projectName": "HandloomElegance.Common",
-      "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\handloomelegance.common\\HandloomElegance.Common.csproj",
+      "projectPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Common\\HandloomElegance.Common.csproj",
       "packagesPath": "C:\\Users\\sanjai.harikrishnan\\.nuget\\packages\\",
-      "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\handloomelegance.common\\obj\\",
+      "outputPath": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sanjai.harikrishnan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -579,7 +579,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

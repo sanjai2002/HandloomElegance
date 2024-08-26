@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using HandloomElegance.Data;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
@@ -59,6 +60,9 @@ public partial class HandloomEleganceDbContext : DbContext
             entity.Property(e => e.Country)
                 .HasMaxLength(100)
                 .HasColumnName("country");
+            entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
+            entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
             entity.Property(e => e.PostalCode)
                 .HasMaxLength(20)
                 .HasColumnName("postal_code");
@@ -87,9 +91,12 @@ public partial class HandloomEleganceDbContext : DbContext
             entity.Property(e => e.CategoryName)
                 .HasMaxLength(50)
                 .HasColumnName("category_name");
+            entity.Property(e => e.CreatedAt).HasColumnType("datetime");
             entity.Property(e => e.Description)
                 .HasColumnType("text")
                 .HasColumnName("description");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
+            entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -104,6 +111,7 @@ public partial class HandloomEleganceDbContext : DbContext
 
             entity.Property(e => e.OrderId).HasColumnName("order_id");
             entity.Property(e => e.AddressId).HasColumnName("address_id");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
             entity.Property(e => e.OrderDate)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
@@ -206,8 +214,9 @@ public partial class HandloomEleganceDbContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("description");
             entity.Property(e => e.ImageUrl)
-                .HasColumnType("blob")
+                .HasMaxLength(100)
                 .HasColumnName("image_url");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
             entity.Property(e => e.Price)
                 .HasPrecision(10, 2)
                 .HasColumnName("price");
@@ -266,6 +275,9 @@ public partial class HandloomEleganceDbContext : DbContext
             entity.HasIndex(e => e.UserId, "user_id");
 
             entity.Property(e => e.CartId).HasColumnName("cart_id");
+            entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
+            entity.Property(e => e.ModifiedAt).HasColumnType("datetime");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -300,12 +312,12 @@ public partial class HandloomEleganceDbContext : DbContext
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
                 .HasColumnName("first_name");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
                 .HasColumnName("last_name");
-            entity.Property(e => e.PasswordHash)
-                .HasMaxLength(255)
-                .HasColumnName("password_hash");
+            entity.Property(e => e.Lastlogin).HasColumnType("datetime");
+            entity.Property(e => e.Password).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(20)
                 .HasColumnName("phone_number");

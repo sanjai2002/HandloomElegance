@@ -10,11 +10,8 @@ namespace HandloomElegance.Api.Controllers{
         private readonly IAddressServices _IAddressServices;
         public AddressController(IAddressServices IAddressServices){
            _IAddressServices= IAddressServices;
-
         }
-
-
-
+        
     }
     
     }
