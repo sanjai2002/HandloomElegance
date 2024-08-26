@@ -5,23 +5,31 @@ using HandloomElegance.Data.IRepository;
 using HandloomElegance.Common.Utils;
 using HandloomElegance.Data.Repository;
 using System.Text;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
+
+
 namespace HandloomElegance.Core.Services
 {
     public class ProductServices : IProductServices
     {
         private readonly IProductRepository _IProductRepository;
-
-        public ProductServices(IProductRepository IProductRepository)
+        
+        private readonly IWebHostEnvironment _environment;
+        private readonly IHttpContextAccessor _contextAccessor;
+        public ProductServices(IProductRepository IProductRepository,IWebHostEnvironment environment,
+            IHttpContextAccessor httpContextAccessor)
         {
             _IProductRepository = IProductRepository;
-            
+             _environment = environment;
+            _contextAccessor = httpContextAccessor;
         }
         public async Task<bool> AddProducts(AddProductViewModel AddProducts)
         {
             bool ExistingProduct = _IProductRepository.FindproductByName(AddProducts!.Productname!);
             if (!ExistingProduct)
             {
-                byte[] byteArray = Encoding.ASCII.GetBytes(AddProducts!.Image!);
                 Product ob = new Product()
                 {
                     ProductId = Guid.NewGuid(),
@@ -36,7 +44,6 @@ namespace HandloomElegance.Core.Services
                 return true;
             }
             return false;
-
         }
         
         public IEnumerable<ProductListViewModel>GetAllProducts(){
@@ -85,4 +92,6 @@ namespace HandloomElegance.Core.Services
 
 
     }
+
+    
 }

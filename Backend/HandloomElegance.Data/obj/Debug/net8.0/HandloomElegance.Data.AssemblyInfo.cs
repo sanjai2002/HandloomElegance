@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HandloomElegance.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11fd891f511f554e8f39ad043880462fd8a7d961")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38a77edcea1c9dd602726f0705ba71f7281a5a7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HandloomElegance.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HandloomElegance.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
