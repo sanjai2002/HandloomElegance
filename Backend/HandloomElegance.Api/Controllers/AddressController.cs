@@ -39,6 +39,12 @@ namespace HandloomElegance.Api.Controllers{
             if(address) return Ok("Address Deleted");
             return Ok("Not Deleted");
         }
+        
+        [HttpGet]
+        public IActionResult GetUserAddress(Guid userId){
+            var addresslist =_IAddressServices.GetUserAddressByUserId(userId);
+            return Ok(addresslist);
+        }
 
 
         

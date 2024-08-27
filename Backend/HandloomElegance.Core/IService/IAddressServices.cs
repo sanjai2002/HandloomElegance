@@ -8,6 +8,8 @@ namespace HandloomElegance.Core.IServices{
          public Task<bool>UpdateAddress(UpdateAddressViewModel address);
 
          public Task<bool>SoftDeleteAddress(Guid AddressId);
+
+         public IEnumerable<UserAddressListViewmodel>GetUserAddressByUserId(Guid UserId);
         
     }
 

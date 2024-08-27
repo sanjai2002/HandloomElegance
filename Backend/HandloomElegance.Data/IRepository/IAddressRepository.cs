@@ -9,7 +9,7 @@ namespace HandloomElegance.Data.IRepository{
 
         public Task UpdateAddress(Address address);
 
-    
+       public IEnumerable<UserAddressListViewmodel>GetuserAddressbyUserId(Guid userId);
 
         public Address? FindAddress(Guid AddressId);
 

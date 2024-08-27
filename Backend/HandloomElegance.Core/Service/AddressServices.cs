@@ -60,6 +60,10 @@ namespace HandloomElegance.Core.Services
             return false;
         }
 
+        public IEnumerable<UserAddressListViewmodel>GetUserAddressByUserId(Guid UserId){
+            return _IAddressRepository.GetuserAddressbyUserId(UserId);
+        }
+
     }
 
 }

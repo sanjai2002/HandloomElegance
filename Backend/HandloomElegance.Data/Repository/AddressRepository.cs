@@ -38,6 +38,20 @@ namespace HandloomElegance.Data.Repository
             await SaveChanges();
         }
 
+        public IEnumerable<UserAddressListViewmodel>GetuserAddressbyUserId(Guid userId){
+
+            return _HandloomEleganceDbContext.Addresses.Where(e=>e.UserId==userId && e.IsActive==true) 
+            .Select(i=>new UserAddressListViewmodel{
+                AddressId=i.AddressId,
+                StreetAddress=i.StreetAddress,
+                City=i.City,
+                State=i.State,
+                PostalCode=i.PostalCode,
+                Country=i.Country,
+            }).ToList();
+            
+        }
+
 
     }
 
