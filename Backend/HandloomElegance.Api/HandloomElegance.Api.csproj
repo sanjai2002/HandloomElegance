@@ -19,7 +19,9 @@
   <ItemGroup>
     <ProjectReference Include="..\HandloomElegance.Core\HandloomElegance.Core.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="wwwroot\CoursehumbnailImages\" />
+  </ItemGroup>
 
 
 </Project>

@@ -1979,14 +1979,18 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "HandloomElegance.Data": "1.0.0"
+          "HandloomElegance.Data": "1.0.0",
+          "Microsoft.AspNetCore.Hosting": "2.2.7"
         },
         "compile": {
           "bin/placeholder/HandloomElegance.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/HandloomElegance.Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "HandloomElegance.Data/1.0.0": {
         "type": "project",
@@ -5611,7 +5615,6 @@
     "net8.0": [
       "HandloomElegance.Core >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.7",
-      "Microsoft.AspNetCore.Hosting >= 2.2.7",
       "Microsoft.AspNetCore.Http >= 2.2.2",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.7",
       "Swashbuckle.AspNetCore >= 6.4.0"
@@ -5666,10 +5669,6 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.0.7, )"
-          },
-          "Microsoft.AspNetCore.Hosting": {
-            "target": "Package",
-            "version": "[2.2.7, )"
           },
           "Microsoft.AspNetCore.Http": {
             "target": "Package",

@@ -8,7 +8,7 @@ namespace HandloomElegance.Data.IRepository{
       public IEnumerable<CategoryListViewModel>GetAllCategory();
       public Category FindCactegorybyid(Guid CategoryId);
       public Task UpdateCategory(Category category);
-      public Task DeleteCategory(Category category);
+      public Task SoftDeleteCategory(Category category);
 
     }
 

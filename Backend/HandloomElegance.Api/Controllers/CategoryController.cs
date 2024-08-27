@@ -45,9 +45,9 @@ namespace HandloomElegance.Api.Controllers
             return Ok("Not Updated");
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteCategory(Guid CategoryId){
-            bool Categories=await _ICategoryServices.DeleteCategory(CategoryId);
+        [HttpPut]
+        public async Task<IActionResult> SoftDeleteCategory(Guid CategoryId){
+            bool Categories=await _ICategoryServices.SoftDeleteCategory(CategoryId);
             if(Categories==true){
                 return Ok("Deleted Successfully");
             }

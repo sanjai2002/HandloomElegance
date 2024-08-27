@@ -4,13 +4,29 @@ using HandloomElegance.Core.IServices;
 using HandloomElegance.Core.Services;
 using HandloomElegance.Data.IRepository;
 using HandloomElegance.Data.Repository;
-
+using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
+#region CORS setting for API
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: "_myAllowSpecificOrigins",
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyMethod();
+        }
+    );
+});
+
+#endregion
+
+// Dbcontext
 builder.Services.AddScoped<HandloomEleganceDbContext>();
+
 builder.Services.AddScoped<IUserServices,userServices>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<ICategoryServices,CategoryServices>();
@@ -29,28 +45,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// builder.Services.AddAuthentication(options =>
-// {
-//     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-//     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-// })
-// .AddJwtBearer(options =>
-// {
-//     options.SaveToken = true;
-//     options.RequireHttpsMetadata = false;
-//     options.TokenValidationParameters = new TokenValidationParameters()
-//     {
-//         ValidateIssuer = true,
-//         ValidateAudience = true,
-//         ValidateLifetime = true,
-//         ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-//         ValidAudience = builder.Configuration["JWT:ValidAudience"],
-//         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]!))
-//     };
-// });
-
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -61,6 +56,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles(
+    new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+            Path.Combine(app.Environment.WebRootPath, "Products")
+        ),
+        RequestPath = "/wwwroot/Products"
+    }
+);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -15,7 +15,6 @@ namespace HandloomElegance.Core.Services
     public class ProductServices : IProductServices
     {
         private readonly IProductRepository _IProductRepository;
-        
         private readonly IWebHostEnvironment _environment;
         private readonly IHttpContextAccessor _contextAccessor;
         public ProductServices(IProductRepository IProductRepository,IWebHostEnvironment environment,
@@ -30,6 +29,14 @@ namespace HandloomElegance.Core.Services
             bool ExistingProduct = _IProductRepository.FindproductByName(AddProducts!.Productname!);
             if (!ExistingProduct)
             {
+                var uniqueFileName = $"{Guid.NewGuid()}_{AddProducts.Image.FileName}";
+                var uploadsFolder = Path.Combine(_environment.WebRootPath, "Products"); 
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    AddProducts.Image.CopyTo(stream);
+                }
                 Product ob = new Product()
                 {
                     ProductId = Guid.NewGuid(),
@@ -38,7 +45,9 @@ namespace HandloomElegance.Core.Services
                     Price = AddProducts.Price,
                     StockQuantity = AddProducts.StockQuantity,
                     CategoryId = AddProducts.CategoryId,
-                    // ImageUrl = byteArray, 
+                    ImageUrl = uniqueFileName, 
+                    CreatedAt=DateTime.Now,
+                    IsActive=false,
                 };
                 await _IProductRepository.AddProducts(ob);
                 return true;
@@ -49,30 +58,74 @@ namespace HandloomElegance.Core.Services
         public IEnumerable<ProductListViewModel>GetAllProducts(){
             return _IProductRepository.GetAllproducts();
         }
-      public async Task<ProductListDetailsViewModel>GetProductDetailsByProductId(string ProductId){
-            var product =  _IProductRepository.GetProductDetailsByProductId(Guid.Parse(ProductId));
-                ProductListDetailsViewModel ProductList=new ProductListDetailsViewModel(){
-                    ProductId=product.ProductId,
-                    Productname=product.Productname,
-                    Description=product.Description,
-                    Price=product.Price,
-                    StockQuantity=product.StockQuantity,
-                    CategoryName=product.Category?.CategoryName,
-                    // Image=Encoding.ASCII.GetString(product!.ImageUrl!)
-                };
-                return ProductList;
-      }
 
+
+    //   public async Task<ProductListDetailsViewModel>GetProductDetailsByProductId(string ProductId){
+    //         var product =  _IProductRepository.GetProductDetailsByProductId(Guid.Parse(ProductId));
+    //             ProductListDetailsViewModel ProductList=new ProductListDetailsViewModel(){
+    //                 ProductId=product!.ProductId,
+    //                 Productname=product.Productname,
+    //                 Description=product.Description,
+    //                 Price=product.Price,
+    //                 StockQuantity=product.StockQuantity,
+    //                 CategoryName=product!.Category!.CategoryName,
+    //                 Image=String.Format(
+    //                 "{0}://{1}{2}/wwwroot/Products/{3}",
+    //                 _contextAccessor.HttpContext.Request.Scheme,
+    //                 _contextAccessor.HttpContext.Request.Host,
+    //                 _contextAccessor.HttpContext.Request.PathBase,
+    //                 product.ImageUrl),
+                    
+                
+    //             };
+    //             return ProductList;
+    //   }
+    public async Task<ProductListDetailsViewModel> GetProductDetailsByProductId(string ProductId)
+{
+    var product = _IProductRepository.GetProductDetailsByProductId(Guid.Parse(ProductId));
+
+    if (product == null)
+    {
+        throw new Exception("Product not found.");
+    }
+
+    var categoryName = product.Category != null ? product.Category.CategoryName : "No Category";
+
+    ProductListDetailsViewModel ProductList = new ProductListDetailsViewModel()
+    {
+        ProductId = product.ProductId,
+        Productname = product.Productname,
+        Description = product.Description,
+        Price = product.Price,
+        StockQuantity = product.StockQuantity,
+        CategoryName = categoryName,  
+        Image = String.Format(
+                "{0}://{1}{2}/wwwroot/Products/{3}",
+                _contextAccessor.HttpContext.Request.Scheme,
+                _contextAccessor.HttpContext.Request.Host,
+                _contextAccessor.HttpContext.Request.PathBase,
+                product.ImageUrl),
+    };
+
+    return ProductList;
+}
         public async Task<bool>UpdateProduct(UpdateProductViewModel UpdateProducts ){
             var product =_IProductRepository.FindProductByid(UpdateProducts.ProductId);
             if(product!=null){
-                byte[] byteArray = Encoding.ASCII.GetBytes(UpdateProducts!.Image!);
+                var uniqueFileName = $"{Guid.NewGuid()}_{UpdateProducts!.Image!.FileName}";
+                var uploadsFolder = Path.Combine(_environment.WebRootPath,"Products"); 
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    UpdateProducts.Image.CopyTo(stream);
+                }
                 product.Productname=UpdateProducts!.Productname!;
                 product.Description=UpdateProducts!.Description!;
                 product.Price=UpdateProducts!.Price;
                 product.StockQuantity=UpdateProducts!.StockQuantity;
                 product.CategoryId=UpdateProducts!.CategoryId;
-                // product.ImageUrl=byteArray;
+                product.ImageUrl=uniqueFileName;
                 product.UpdatedAt=DateTime.Now;
                 await _IProductRepository.Updateproduct(product);
                 return true;
@@ -83,11 +136,11 @@ namespace HandloomElegance.Core.Services
         public async Task<bool>Deleteproduct(Guid ProductId){
              var product =_IProductRepository.FindProductByid(ProductId);
              if(product!=null){
+                product.IsActive=false;
                 await _IProductRepository.DeleteProduct(product);
                 return true;
              }
              return false;
-
         }
 
 

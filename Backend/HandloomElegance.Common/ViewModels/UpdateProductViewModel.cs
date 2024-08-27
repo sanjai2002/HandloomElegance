@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http;
+
 namespace HandloomElegance.Common.ViewModels
 {
     public class UpdateProductViewModel
@@ -8,7 +10,7 @@ namespace HandloomElegance.Common.ViewModels
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
         public Guid? CategoryId { get; set; }
-        public string? Image { get; set; }
+        public IFormFile? Image { get; set; }
 
     }
 

@@ -20,16 +20,14 @@ namespace HandloomElegance.Core.Services
             {
                 CategoryId = Guid.NewGuid(),
                 CategoryName = category!.CategoryName!,
-                Description = category!.Description
-
+                Description = category!.Description,
+                IsActive=true,
+                CreatedAt=DateTime.Now,
             };
             await _ICategoryrepoitory.AddCategory(ob);
             return true;
-
             }
             return false;
-
-            
         }
 
         public IEnumerable<CategoryListViewModel> GetAllcategory()
@@ -44,16 +42,18 @@ namespace HandloomElegance.Core.Services
             {
                 Category.CategoryName = category.CategoryName;
                 category.Description = category.Description;
+                Category.ModifiedAt=DateTime.Now;
                 await _ICategoryrepoitory.UpdateCategory(Category);
                 return true;
             }
             return false;
         }
 
-        public async Task<bool>DeleteCategory(Guid CategoryId){
+        public async Task<bool>SoftDeleteCategory(Guid CategoryId){
             var Category = _ICategoryrepoitory.FindCactegorybyid(CategoryId);
             if(Category!=null){
-                await _ICategoryrepoitory.DeleteCategory(Category);
+                Category.IsActive=false;
+                await _ICategoryrepoitory.SoftDeleteCategory(Category);
                 return true;
             }
             return false;

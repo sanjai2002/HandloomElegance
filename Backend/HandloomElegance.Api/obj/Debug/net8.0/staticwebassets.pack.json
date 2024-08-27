@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Learning\\HandloomElegance\\Backend\\HandloomElegance.Api\\wwwroot\\Products\\7debdeec-72f7-46a0-b01c-4e3f6815391a_sanjai.png",
+      "PackagePath": "staticwebassets\\Products\\7debdeec-72f7-46a0-b01c-4e3f6815391a_sanjai.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HandloomElegance.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HandloomElegance.Api.props",
+      "PackagePath": "build\\HandloomElegance.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HandloomElegance.Api.props",
+      "PackagePath": "buildMultiTargeting\\HandloomElegance.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HandloomElegance.Api.props",
+      "PackagePath": "buildTransitive\\HandloomElegance.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

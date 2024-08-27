@@ -11,7 +11,7 @@ namespace HandloomElegance.Core.IServices{
 
         public Task<bool>UpdateCategory(CategoryListViewModel category);
 
-        public Task<bool>DeleteCategory(Guid CategoryId);
+        public Task<bool>SoftDeleteCategory(Guid CategoryId);
 
 
     }

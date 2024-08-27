@@ -25,7 +25,8 @@ namespace HandloomElegance.Data.Repository
 
         public IEnumerable<CategoryListViewModel> GetAllCategory()
         {
-            return _HandloomEleganceDbContext.Categories.Select(i => new CategoryListViewModel
+            return _HandloomEleganceDbContext.Categories.Where(e=>e.IsActive==true)
+            .Select(i => new CategoryListViewModel
             {
                 CategoryId = i.CategoryId,
                 CategoryName = i.CategoryName,
@@ -45,13 +46,11 @@ namespace HandloomElegance.Data.Repository
             await _HandloomEleganceDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteCategory(Category category)
+        public async Task SoftDeleteCategory(Category category)
         {
-            _HandloomEleganceDbContext.Categories.Remove(category);
+            _HandloomEleganceDbContext.Categories.Update(category);
             await _HandloomEleganceDbContext.SaveChangesAsync();
-        }
-
-        
+        } 
 
     }
 

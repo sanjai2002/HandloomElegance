@@ -156,3 +156,4 @@ D:\Learning\HandloomElegance\Backend\HandloomElegance.Api.Tests\bin\Debug\net8.0
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Api.Tests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Learning\HandloomElegance\Backend\HandloomElegance.Api.Tests\obj\Debug\net8.0\HandloomElegance.Api.Tests.sourcelink.json
+D:\Learning\HandloomElegance\Backend\HandloomElegance.Api.Tests\bin\Debug\net8.0\HandloomElegance.Api.staticwebassets.runtime.json

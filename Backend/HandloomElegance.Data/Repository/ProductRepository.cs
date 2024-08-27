@@ -8,7 +8,6 @@ namespace HandloomElegance.Data.Repository
     public class ProductRepository : IProductRepository
     {
         private readonly HandloomEleganceDbContext _HandloomEleganceDbContext;
-
         public ProductRepository(HandloomEleganceDbContext HandloomEleganceDbContext)
         {
             _HandloomEleganceDbContext = HandloomEleganceDbContext;
@@ -16,7 +15,7 @@ namespace HandloomElegance.Data.Repository
 
         public bool FindproductByName(string ProductName)
         {
-            return _HandloomEleganceDbContext.Products.Any(p => p.Productname == ProductName);
+            return _HandloomEleganceDbContext.Products.Any(p => p.Productname == ProductName && p.IsActive == true);
         }
 
         public async Task AddProducts(Product product)
@@ -27,7 +26,8 @@ namespace HandloomElegance.Data.Repository
 
         public IEnumerable<ProductListViewModel> GetAllproducts()
         {
-            return _HandloomEleganceDbContext.Products.OrderByDescending(cr => cr.CreatedAt).
+            return _HandloomEleganceDbContext.Products.Where(e => e.IsActive == true)
+            .OrderByDescending(cr => cr.CreatedAt).
             Select(e => new ProductListViewModel
             {
                 ProductId = e.ProductId,
@@ -38,17 +38,17 @@ namespace HandloomElegance.Data.Repository
                 CategoryName = e.Category!.CategoryName,
                 // Image = Encoding.ASCII.GetString(e.ImageUrl!),
             }).ToList();
-
-
         }
-        public Product GetProductDetailsByProductId(Guid ProductId)
+
+
+        public Product? GetProductDetailsByProductId(Guid ProductId)
         {
             return _HandloomEleganceDbContext.Products
                 .Include(c => c.Category)
                 .FirstOrDefault(P => P.ProductId == ProductId);
         }
 
-        public Product FindProductByid(Guid ProductId)
+        public Product? FindProductByid(Guid ProductId)
         {
             return _HandloomEleganceDbContext.Products.Find(ProductId);
         }
@@ -62,7 +62,7 @@ namespace HandloomElegance.Data.Repository
 
         public async Task DeleteProduct(Product product)
         {
-            _HandloomEleganceDbContext.Remove(product);
+            _HandloomEleganceDbContext.Update(product);
             await _HandloomEleganceDbContext.SaveChangesAsync();
         }
 
