@@ -11,6 +11,17 @@ namespace HandloomElegance.Api.Controllers{
         public AddressController(IAddressServices IAddressServices){
            _IAddressServices= IAddressServices;
         }
+
+        [HttpPost]
+        public async Task<IActionResult>AddAddress(AddAddressViewModel address){
+            var userAddress=await _IAddressServices.AddAddress(address);
+            if(userAddress){
+                return Ok("Address Added");
+            }
+            return Ok("Address Not Added");
+        }
+
+        
         
     }
     

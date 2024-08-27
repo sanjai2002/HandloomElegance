@@ -89,8 +89,6 @@ namespace HandloomElegance.Core.Services
         throw new Exception("Product not found.");
     }
 
-    var categoryName = product.Category != null ? product.Category.CategoryName : "No Category";
-
     ProductListDetailsViewModel ProductList = new ProductListDetailsViewModel()
     {
         ProductId = product.ProductId,
@@ -98,7 +96,7 @@ namespace HandloomElegance.Core.Services
         Description = product.Description,
         Price = product.Price,
         StockQuantity = product.StockQuantity,
-        CategoryName = categoryName,  
+        CategoryName = product!.Category!.CategoryName,  
         Image = String.Format(
                 "{0}://{1}{2}/wwwroot/Products/{3}",
                 _contextAccessor.HttpContext.Request.Scheme,

@@ -11,7 +11,22 @@ namespace HandloomElegance.Core.Services
             _IAddressRepository=IAddressRepository;
         }
 
-        
+        public async Task<bool>AddAddress(AddAddressViewModel address){
+            
+             Address userAddress=new Address(){
+                AddressId=Guid.NewGuid(),
+                UserId=address.UserId,
+                StreetAddress=address.StreetAddress,
+                City=address.City,
+                State=address.State,
+                PostalCode=address.PostalCode,
+                Country=address.Country,
+                IsActive=true,
+                CreatedAt=DateTime.Now,
+             };
+        await _IAddressRepository.AddAddress(userAddress);
+        return true;
+        }
 
 
     }

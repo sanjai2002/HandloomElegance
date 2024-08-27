@@ -1,8 +1,7 @@
-using System.Data.Entity;
-using System.Text;
 using HandloomElegance.Common.Entities;
 using HandloomElegance.Common.ViewModels;
 using HandloomElegance.Data.IRepository;
+using Microsoft.EntityFrameworkCore;
 namespace HandloomElegance.Data.Repository
 {
     public class ProductRepository : IProductRepository
@@ -41,12 +40,14 @@ namespace HandloomElegance.Data.Repository
         }
 
 
-        public Product? GetProductDetailsByProductId(Guid ProductId)
+
+        public Product GetProductDetailsByProductId(Guid productId)
         {
             return _HandloomEleganceDbContext.Products
-                .Include(c => c.Category)
-                .FirstOrDefault(P => P.ProductId == ProductId);
+                .Include(p => p.Category)
+                .FirstOrDefault(p => p.ProductId == productId);
         }
+
 
         public Product? FindProductByid(Guid ProductId)
         {
