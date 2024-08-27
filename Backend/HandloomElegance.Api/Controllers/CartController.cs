@@ -36,6 +36,11 @@ namespace HandloomElegance.Api.Controllers{
             return Ok("Cart Not Updated");
             
         }
+        [HttpGet]
+        public IActionResult GetUserCart(Guid userId){
+            var cartlist=_ICartServices.GetUserCartListByUserId(userId);
+            return Ok(cartlist);
+        }
         
 
     }

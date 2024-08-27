@@ -59,7 +59,6 @@ namespace HandloomElegance.Core.Services
                 TotalAmount=TotalAmount,
                 AddressId=AddressId,
             };
-
             await _IOrderRepository.Addorder(ob);
             var OrderId=_IOrderRepository.Findorder(ob.OrderId);
             foreach(var Cart in CartItems){

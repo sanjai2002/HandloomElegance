@@ -45,8 +45,6 @@ namespace HandloomElegance.Api.Controllers{
             var addresslist =_IAddressServices.GetUserAddressByUserId(userId);
             return Ok(addresslist);
         }
-
-
         
     }
     

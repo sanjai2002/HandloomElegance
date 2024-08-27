@@ -25,16 +25,15 @@ namespace HandloomElegance.Core.Services
                     CartId = Guid.NewGuid(),
                     UserId = Cart.UserId,
                     ProductId = Cart.ProductId,
-                    Quantity = Cart.Quantity
-
+                    Quantity = Cart.Quantity,
+                    IsActive=true,
+                    CreatedAt=DateTime.Now,
                 };
                 await _ICartRepository.AddCart(ShoppingCart);
                 return true;
 
             }
             return false;
-
-
 
         }
 
@@ -44,7 +43,8 @@ namespace HandloomElegance.Core.Services
             var cart = _ICartRepository.FindCartId(CartId);
             if (cart != null)
             {
-                await _ICartRepository.RemoveCart(cart);
+                cart.IsActive=false;
+                await _ICartRepository.SoftDelete(cart);
                 return true;
             }
             return false;
@@ -61,6 +61,10 @@ namespace HandloomElegance.Core.Services
             }
             return false;
         }
+
+         public IEnumerable<UserCartListViewModel>GetUserCartListByUserId(Guid userId){
+            return _ICartRepository.GetUserCartList(userId);
+         }
     }
 
 }

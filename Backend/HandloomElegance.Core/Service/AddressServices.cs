@@ -48,7 +48,6 @@ namespace HandloomElegance.Core.Services
             }
             return false;
         }
-
         public async Task<bool> SoftDeleteAddress(Guid AddressId)
         {
             var address = _IAddressRepository.FindAddress(AddressId);
