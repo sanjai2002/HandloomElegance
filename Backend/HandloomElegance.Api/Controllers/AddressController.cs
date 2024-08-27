@@ -14,14 +14,33 @@ namespace HandloomElegance.Api.Controllers{
 
         [HttpPost]
         public async Task<IActionResult>AddAddress(AddAddressViewModel address){
-            var userAddress=await _IAddressServices.AddAddress(address);
+            bool userAddress=await _IAddressServices.AddAddress(address);
             if(userAddress){
                 return Ok("Address Added");
             }
             return Ok("Address Not Added");
         }
 
-        
+        [HttpPut]
+        public async Task<IActionResult>UpdateAddress(UpdateAddressViewModel address){
+            bool  userAddress=await _IAddressServices.UpdateAddress(address);
+            if(userAddress){
+                return Ok("Address Updated");
+            } 
+            else{
+                return Ok("Address Not Updated");
+            }
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult>SoftDeleteAddress(Guid AddressId){
+            bool address=await _IAddressServices.SoftDeleteAddress(AddressId);
+            if(address) return Ok("Address Deleted");
+            return Ok("Not Deleted");
+        }
+
+
         
     }
     

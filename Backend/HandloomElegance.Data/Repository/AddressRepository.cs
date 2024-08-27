@@ -18,9 +18,24 @@ namespace HandloomElegance.Data.Repository
             await SaveChanges();
         }
 
+        public async Task UpdateAddress(Address address){
+             _HandloomEleganceDbContext.Addresses.Update(address);
+            await SaveChanges();
+        }
+
 
         public async Task SaveChanges(){
             await _HandloomEleganceDbContext.SaveChangesAsync();
+        }
+
+        public Address? FindAddress(Guid AddressId){
+            return _HandloomEleganceDbContext.Addresses.Find(AddressId);
+
+        }
+
+        public async Task SoftDeleteAddress(Address address){
+            _HandloomEleganceDbContext.Addresses.Update(address);
+            await SaveChanges();
         }
 
 

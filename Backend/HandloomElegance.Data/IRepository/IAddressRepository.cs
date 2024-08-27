@@ -7,6 +7,14 @@ namespace HandloomElegance.Data.IRepository{
 
         public Task AddAddress(Address address);
 
+        public Task UpdateAddress(Address address);
+
+    
+
+        public Address? FindAddress(Guid AddressId);
+
+        public Task SoftDeleteAddress(Address address);
+
        
 
     }
