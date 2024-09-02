@@ -25,6 +25,7 @@ namespace HandloomElegance.Data.Repository
 
         public IEnumerable<ProductListViewModel> GetAllproducts()
         {
+            // var  Productrating=ReviewRepository.GetAllproductReviews();
             return _HandloomEleganceDbContext.Products.Where(e => e.IsActive == true)
             .OrderByDescending(cr => cr.CreatedAt).
             Select(e => new ProductListViewModel
@@ -39,6 +40,7 @@ namespace HandloomElegance.Data.Repository
             }).ToList();
         }
 
+         
 
 
         public Product GetProductDetailsByProductId(Guid productId)
@@ -67,6 +69,8 @@ namespace HandloomElegance.Data.Repository
             await _HandloomEleganceDbContext.SaveChangesAsync();
         }
 
+
+    
     }
 
 

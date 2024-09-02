@@ -29,6 +29,11 @@ namespace HandloomElegance.Core.Services{
             return false;
         }
 
+        // public IEnumerable<object>GetAllproductReviews(){
+        //     return _IReviewRepository.GetAllproductReviews();
+        // }
+        
+
 
 
     }

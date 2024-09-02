@@ -6,6 +6,7 @@ namespace HandloomElegance.Data.IRepository{
         public Task AddProducts(Product product);
 
         public IEnumerable<ProductListViewModel>GetAllproducts();
+    
 
         public Product? GetProductDetailsByProductId(Guid productid);
 
@@ -13,6 +14,8 @@ namespace HandloomElegance.Data.IRepository{
         public Task Updateproduct(Product product);
 
         public Task DeleteProduct(Product product);
+
+
 
 
     }

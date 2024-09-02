@@ -70,7 +70,7 @@ namespace HandloomElegance.Core.Services
             var OrderId = _IOrderRepository.Findorder(ob.OrderId);
             foreach (var Cart in CartItems)
             {
-                Guid productId = Guid.Parse(Cart!.ProductId!.ToString());
+                Guid productId = Guid.Parse(Cart.ProductId.ToString());
                 var product = _IOrderRepository.FindProduct(productId);
                 product.StockQuantity = product.StockQuantity - Cart.Quantity;
                 await _IOrderRepository.QuantityUpdate(product);

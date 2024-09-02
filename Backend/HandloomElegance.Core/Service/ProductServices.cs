@@ -15,12 +15,14 @@ namespace HandloomElegance.Core.Services
     public class ProductServices : IProductServices
     {
         private readonly IProductRepository _IProductRepository;
+        private readonly IReviewRepository _IReviewRepository;
         private readonly IWebHostEnvironment _environment;
         private readonly IHttpContextAccessor _contextAccessor;
-        public ProductServices(IProductRepository IProductRepository, IWebHostEnvironment environment,
+        public ProductServices(IProductRepository IProductRepository, IReviewRepository IReviewRepository, IWebHostEnvironment environment,
             IHttpContextAccessor httpContextAccessor)
         {
             _IProductRepository = IProductRepository;
+            _IReviewRepository = IReviewRepository;
             _environment = environment;
             _contextAccessor = httpContextAccessor;
         }
@@ -57,7 +59,15 @@ namespace HandloomElegance.Core.Services
 
         public IEnumerable<ProductListViewModel> GetAllProducts()
         {
-            return _IProductRepository.GetAllproducts();
+
+            var products = _IProductRepository.GetAllproducts();
+             var productrating=_IReviewRepository.GetAllProductReviews().ToDictionary(c=>c.productId);
+            foreach (var product in products)
+            {
+                product.rating = productrating.ContainsKey(product.ProductId)?productrating[product.ProductId].rating:0;
+            }
+
+            return products;
         }
 
         public async Task<ProductListDetailsViewModel> GetProductDetailsByProductId(string ProductId)
@@ -83,6 +93,7 @@ namespace HandloomElegance.Core.Services
                         _contextAccessor.HttpContext.Request.Host,
                         _contextAccessor.HttpContext.Request.PathBase,
                         product.ImageUrl),
+                rating = _IReviewRepository.CalculateRatingByProductId(Guid.Parse(ProductId)),
             };
 
             return ProductList;

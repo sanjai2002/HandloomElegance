@@ -18,11 +18,12 @@ namespace HandloomElegance.Api.Controllers
             bool Review=await _IReviewServices.AddReview(AddReview);
             if(Review) return Ok("Review Submitted");
             return Ok("Review Not Submitted");
-           
         }
 
-
-
-
+        // [HttpGet]
+        // public async Task<IActionResult>GetproductReview(){
+        //         var Ratinglist= _IReviewServices.GetAllproductReviews();
+        //         return Ok(Ratinglist);
+        // }
     }
 }

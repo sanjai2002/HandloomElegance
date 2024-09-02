@@ -8,5 +8,6 @@ namespace HandloomElegance.Common.ViewModels
         public int StockQuantity { get; set; }
         public string? CategoryName { get; set; }
         public string? Image { get; set; }
+        public double rating{get;set;}
     }
 }
